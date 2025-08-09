@@ -1,0 +1,9 @@
+[versions]
+detekt = "1.23.8"
+kotlin-gradle = "2.2.0"
+maven-publish = "0.34.0"
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-gradle" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
