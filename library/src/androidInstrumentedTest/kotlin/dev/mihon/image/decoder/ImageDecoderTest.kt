@@ -8,7 +8,8 @@ import android.util.Log
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.After
-import org.junit.Assert.*
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -37,7 +38,7 @@ class ImageDecoderTest {
     fun testImageDecodingForSupportedFormats() {
 
         // decode a png image using Android lib
-        val ref_bitmap = context.assets.open("image.png").use { stream ->
+        val reference = context.assets.open("image.png").use { stream ->
             BitmapFactory.decodeStream(stream)
         }
 
@@ -53,7 +54,7 @@ class ImageDecoderTest {
             assertTrue("Bitmap width should be greater than 0", bitmap!!.width > 0)
             assertTrue("Bitmap height should be greater than 0", bitmap.height > 0)
 
-            val diff =compareBitmap(ref_bitmap, bitmap)
+            val diff =compareBitmap(reference, bitmap)
 
             Log.i("ImageDecoderTest", "testImageDecodingForSupportedFormats: diff is $diff")
 
@@ -218,10 +219,10 @@ class ImageDecoderTest {
     private fun compareBitmap(a: Bitmap, b: Bitmap): Double {
         if (a.width != b.width || a.height != b.height) {
             Log.e("ImageDecoderTest", "compareBitmap: image size mismatch: ${a.width}x${a.height} != ${b.width}x${b.height}")
-            return 1.0;
+            return 1.0
         }
 
-        var accum = 0.0;
+        var accum = 0.0
         for (y in 0 until a.height) {
             for (x in 0 until a.width) {
                 val c1 = a.getColor(x, y)
@@ -233,7 +234,7 @@ class ImageDecoderTest {
             }
         }
 
-        accum /= a.width * a.height * 3.0;
+        accum /= a.width * a.height * 3.0
 
         return accum
     }

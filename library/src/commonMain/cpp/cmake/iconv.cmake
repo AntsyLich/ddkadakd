@@ -1,8 +1,8 @@
 include(ExternalProject)
 
 ExternalProject_Add(ep_iconv
-    URL https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz
     DOWNLOAD_EXTRACT_TIMESTAMP true
+    URL https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz
     CONFIGURE_COMMAND
         <SOURCE_DIR>/configure ${EP_AUTOTOOLS_ARGS}
         --enable-extra-encodings
