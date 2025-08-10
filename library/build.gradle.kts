@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
 
 plugins {
@@ -11,6 +12,9 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
     androidTarget {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
 
     @OptIn(ExperimentalAbiValidation::class)
@@ -26,14 +30,28 @@ kotlin {
 android {
     namespace = "dev.mihon.image.decoder"
     compileSdk = 36
+    ndkVersion = "28.2.13676358"
 
     defaultConfig {
-        minSdk = 23
+        minSdk = 21
 
-        externalNativeBuild { cmake {  } }
+        consumerProguardFiles += file("consumer-rules.pro")
+        externalNativeBuild {
+            cmake {
+                targets += "ep_image-decoder"
+            }
+        }
     }
 
-    ndkVersion = "28.2.13676358"
+    buildTypes {
+        release {
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 
     externalNativeBuild {
         cmake {
