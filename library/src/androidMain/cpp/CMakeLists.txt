@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(imagedecoder_jni C CXX ASM)
 
 # This path assumes this CMakeLists.txt is in src/androidMain/cpp/
-set(COMMON_CPP_DIR ../../../commonMain/cpp)
+set(COMMON_CPP_DIR ../../commonMain/cpp)
 
 # Add the common C++ code and its dependencies as a subdirectory.
 # This will execute the CMakeLists.txt in commonMain/cpp, building all external projects
