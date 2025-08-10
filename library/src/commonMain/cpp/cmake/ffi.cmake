@@ -1,8 +1,8 @@
 include(ExternalProject)
 
 ExternalProject_Add(ep_ffi
-    GIT_REPOSITORY      https://github.com/libffi/libffi.git
-    GIT_TAG             v3.4.6
+    GIT_REPOSITORY https://github.com/libffi/libffi.git
+    GIT_TAG v3.4.6
     BUILD_IN_SOURCE true
     CONFIGURE_COMMAND
         <SOURCE_DIR>/autogen.sh && <SOURCE_DIR>/configure ${EP_AUTOTOOLS_ARGS}

@@ -1,8 +1,8 @@
 include(ExternalProject)
 
 ExternalProject_Add(ep_tiff
-    DOWNLOAD_EXTRACT_TIMESTAMP TRUE
     URL http://download.osgeo.org/libtiff/tiff-4.7.0.tar.gz
+    DOWNLOAD_EXTRACT_TIMESTAMP true
     DEPENDS ep_zlib ep_webp ep_jpeg-turbo
     PATCH_COMMAND patch -p 1 < ${CMAKE_CURRENT_LIST_DIR}/patches/tiff-0001-cmake--Replace-CMath--CMath-with-direct-link-to-avoid-export-of-target.patch || true
     CMAKE_ARGS

@@ -1,8 +1,8 @@
 include(ExternalProject)
 
 ExternalProject_Add(ep_jpeg-turbo
-    GIT_REPOSITORY  https://github.com/libjpeg-turbo/libjpeg-turbo
-    GIT_TAG         3.0.3
+    GIT_REPOSITORY https://github.com/libjpeg-turbo/libjpeg-turbo
+    GIT_TAG 3.0.3
     CMAKE_ARGS
         ${EP_CMAKE_ARGS}
         -DWITH_JPEG8=1

@@ -10,7 +10,6 @@ ExternalProject_Add(ep_highway
         -DHWY_ENABLE_TESTS=OFF
         -DHWY_SYSTEM_GTEST=ON
         -DHWY_FORCE_STATIC_LIBS=ON
-
     USES_TERMINAL_DOWNLOAD true
     USES_TERMINAL_BUILD true
 )

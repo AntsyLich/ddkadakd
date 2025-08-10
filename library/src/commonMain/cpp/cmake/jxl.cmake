@@ -3,9 +3,9 @@ include(ExternalProject)
 cmake_policy(SET CMP0097 NEW)
 
 ExternalProject_Add(ep_jxl
-    GIT_REPOSITORY      https://github.com/libjxl/libjxl
-    GIT_TAG             v0.11.0
-    GIT_SUBMODULES      "third_party/skcms"
+    GIT_REPOSITORY https://github.com/libjxl/libjxl
+    GIT_TAG v0.11.0
+    GIT_SUBMODULES "third_party/skcms"
     DEPENDS ep_highway ep_brotli ep_little-cms
     CMAKE_ARGS
         ${EP_CMAKE_ARGS}
@@ -28,7 +28,6 @@ ExternalProject_Add(ep_jxl
         # -DJPEGXL_ENABLE_JPEGLI=OFF
         # -DJPEGXL_ENABLE_JPEGLI_LIBJPEG=ON
         # -DJPEGXL_INSTALL_JPEGLI_LIBJPEG=ON
-
     USES_TERMINAL_DOWNLOAD true
     USES_TERMINAL_BUILD true
 )

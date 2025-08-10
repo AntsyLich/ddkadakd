@@ -1,8 +1,8 @@
 include(ExternalProject)
 
 ExternalProject_Add(ep_little-cms
-    GIT_REPOSITORY  https://github.com/mm2/Little-CMS
-    GIT_TAG         lcms2.16
+    GIT_REPOSITORY https://github.com/mm2/Little-CMS
+    GIT_TAG lcms2.16
     # DOWNLOAD_COMMAND git clone https://github.com/mm2/Little-CMS --branch lcms2.16 --depth 1 ep_lcms || true
     CONFIGURE_COMMAND
         <SOURCE_DIR>/autogen.sh ${EP_AUTOTOOLS_ARGS}

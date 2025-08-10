@@ -3,7 +3,7 @@ include(ExternalProject)
 ExternalProject_Add(ep_zlib
     GIT_REPOSITORY https://github.com/zlib-ng/zlib-ng.git
     GIT_TAG 2.2.1
-    UPDATE_DISCONNECTED True
+    UPDATE_DISCONNECTED true
     CMAKE_ARGS
         ${EP_CMAKE_ARGS}
         -DINSTALL_PKGCONFIG_DIR=${THIRD_PARTY_LIB_PATH}/lib/pkgconfig
