@@ -2,9 +2,9 @@
 // Created by len on 23/12/20.
 //
 
-#include "decode.h"
-#include "decoder_headers.h"
-#include "decoder_vips.h"
+#include "../../../../.cxx/RelWithDebInfo/464z5051/x86_64/fakeroot/src/ep_webp/src/webp/decode.h"
+#include "../../../commonMain/cpp/image-decoder/decoder_headers.h"
+#include "../../../commonMain/cpp/image-decoder/decoder_vips.h"
 #include "java_objects.h"
 #include "java_stream.h"
 #include <android/bitmap.h>

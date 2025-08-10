@@ -38,7 +38,7 @@ android {
         consumerProguardFiles += file("consumer-rules.pro")
         externalNativeBuild {
             cmake {
-                targets += "ep_image-decoder"
+                targets += "imagedecoder" // Changed from ep_image-decoder
             }
         }
     }
@@ -55,7 +55,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            path = file("src/commonMain/cpp/CMakeLists.txt")
+            path = file("src/androidMain/cpp/CMakeLists.txt") // Changed path
         }
     }
 }
