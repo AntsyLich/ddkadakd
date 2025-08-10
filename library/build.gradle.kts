@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.abi.ExperimentalAbiValidation
 
 plugins {
+    alias(libs.plugins.android.library)
     alias(libs.plugins.detekt)
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.maven.publish)
@@ -8,6 +9,9 @@ plugins {
 
 kotlin {
     applyDefaultHierarchyTemplate()
+
+    androidTarget {
+    }
 
     @OptIn(ExperimentalAbiValidation::class)
     abiValidation {
@@ -19,8 +23,27 @@ kotlin {
     }
 }
 
+android {
+    namespace = "dev.mihon.image.decoder"
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 23
+
+        externalNativeBuild { cmake {  } }
+    }
+
+    ndkVersion = "28.2.13676358"
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/commonMain/cpp/CMakeLists.txt")
+        }
+    }
+}
+
 mavenPublishing {
-    coordinates("dev.mihon.image", "decoder", "0.0.0")
+    coordinates("dev.mihon.image", "decoder", "0.0.1")
 
     pom {
         name.set("image-decoder")

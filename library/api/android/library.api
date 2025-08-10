@@ -1,0 +1,10 @@
+public final class dev/mihon/image/decoder/ImageDecoder {
+	public static final field Companion Ldev/mihon/image/decoder/ImageDecoder$Companion;
+	public synthetic fun <init> (JLdev/mihon/image/decoder/ImageDecoder$NativeData;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class dev/mihon/image/decoder/ImageDecoder$Companion {
+	public final fun create (Landroid/os/ParcelFileDescriptor;)Ldev/mihon/image/decoder/ImageDecoder;
+	public final fun nativeCreate (JJ)J
+}
+
